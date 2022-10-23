@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/widget/about_widget.dart';
 import 'package:portfolio/ui/widget/home_widget.dart';
+import 'package:portfolio/ui/widget/navbar_widget.dart';
 import '../../shared/theme.dart';
 
 class MainPage extends StatelessWidget {
@@ -7,28 +9,22 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget navbar() {
-      return Container(
-        height: 93,
-        width: MediaQuery.of(context).size.width,
-        color: secondaryBackGroundColor,
-        child: Row(
-          children: [],
-        ),
-      );
-    }
-
     return Scaffold(
       backgroundColor: primaryBackGroundColor,
-      body: ListView(
-        children: [
-          Stack(
+      body: SingleChildScrollView(
+        child: Container(
+          child: Stack(
             children: [
-              navbar(),
-              HomeWidget(),
+              Column(
+                children: [
+                  HomeWidget(),
+                  AboutWidget(),
+                ],
+              ),
+              NavbarWidget(),
             ],
           ),
-        ],
+        ),
       ),
     );
   }
