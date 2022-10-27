@@ -10,13 +10,11 @@ class HomeWidget extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: Container(
+      child: SizedBox(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              margin: const EdgeInsets.only(
-                left: 108,
-              ),
+            SizedBox(
               width: 755,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -38,29 +36,18 @@ class HomeWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 32),
-                  Row(
-                    children: [
-                      CustomButton(
-                        title: 'Learn More',
-                        onPressed: () {},
-                        width: 191,
-                        borderRadius: 38,
-                      ),
-                      const SizedBox(width: 25),
-                      CustomButton(
-                        title: 'Contact',
-                        onPressed: () {},
-                        width: 191,
-                        borderRadius: 38,
-                        borderColor: greenColor,
-                        backGroundColor: Colors.transparent,
-                      ),
-                    ],
+                  CustomButton(
+                    title: 'Learn More',
+                    onPressed: () {},
+                    width: 191,
+                    borderRadius: 38,
                   ),
                 ],
               ),
             ),
-            Container(),
+            Container(
+              width: 500,
+            ),
           ],
         ),
       ),

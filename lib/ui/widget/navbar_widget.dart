@@ -5,7 +5,11 @@ import 'package:portfolio/ui/widget/navbar_menu_item.dart';
 import '../../shared/theme.dart';
 
 class NavbarWidget extends StatelessWidget {
-  const NavbarWidget({super.key});
+  final ScrollController controller;
+  const NavbarWidget({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class NavbarWidget extends StatelessWidget {
             margin: const EdgeInsets.only(left: 95),
             child: Row(
               children: [
-                Image.asset('assets/logo.png'),
+                Image.asset('logo.png'),
                 const SizedBox(width: 10),
                 Text(
                   'AsakaLynux',
@@ -54,7 +58,11 @@ class NavbarWidget extends StatelessWidget {
                     fontSize: 24,
                     fontWeight: bold,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.animateTo(MediaQuery.of(context).size.height,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.fastOutSlowIn);
+                  },
                 ),
                 NavbarMenuItem(
                   title: 'Work',

@@ -9,22 +9,27 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScrollController _controller = ScrollController();
+
     return Scaffold(
       backgroundColor: primaryBackGroundColor,
-      body: SingleChildScrollView(
-        child: Container(
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  HomeWidget(),
-                  AboutWidget(),
-                ],
-              ),
-              NavbarWidget(),
-            ],
+      body: ListView(
+        controller: _controller,
+        children: [
+          Container(
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    HomeWidget(),
+                    AboutWidget(),
+                  ],
+                ),
+                NavbarWidget(controller: _controller),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
