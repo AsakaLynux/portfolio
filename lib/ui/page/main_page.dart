@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/about_widget.dart';
 import 'package:portfolio/ui/widget/home_widget.dart';
 import 'package:portfolio/ui/widget/navbar_widget.dart';
+import 'package:portfolio/ui/widget/skills_widget.dart';
 import '../../shared/theme.dart';
 
 class MainPage extends StatelessWidget {
@@ -23,6 +24,7 @@ class MainPage extends StatelessWidget {
                   children: [
                     HomeWidget(),
                     AboutWidget(),
+                    SkillsWidget(),
                   ],
                 ),
                 NavbarWidget(controller: _controller),

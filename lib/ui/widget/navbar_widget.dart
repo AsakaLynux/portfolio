@@ -65,15 +65,19 @@ class NavbarWidget extends StatelessWidget {
                   },
                 ),
                 NavbarMenuItem(
-                  title: 'Work',
+                  title: 'Skills',
                   textStyle: primaryTextStyleDmSans.copyWith(
                     fontSize: 24,
                     fontWeight: bold,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.animateTo(MediaQuery.of(context).size.height * 2,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.fastOutSlowIn);
+                  },
                 ),
                 NavbarMenuItem(
-                  title: 'Skills',
+                  title: 'Work',
                   textStyle: primaryTextStyleDmSans.copyWith(
                     fontSize: 24,
                     fontWeight: bold,

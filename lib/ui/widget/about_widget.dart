@@ -15,15 +15,18 @@ class AboutWidget extends StatelessWidget {
         children: [
           // For image
           Container(
-            width: 450,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
+            width: 420,
+            height: 500,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              image: const DecorationImage(
                 image: AssetImage('irfan.jpg'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
           // For text
-          Container(
+          SizedBox(
             height: 435,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
