@@ -8,7 +8,7 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
+      width: double.infinity,
       height: MediaQuery.of(context).size.height,
       child: SizedBox(
         child: Row(

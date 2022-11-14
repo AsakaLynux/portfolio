@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/ui/widget/about_widget.dart';
+import 'package:portfolio/ui/widget/education_widget.dart';
 import 'package:portfolio/ui/widget/home_widget.dart';
+import 'package:portfolio/ui/widget/list_project.dart';
 import 'package:portfolio/ui/widget/navbar_widget.dart';
 import 'package:portfolio/ui/widget/skills_widget.dart';
 import '../../shared/theme.dart';
@@ -10,26 +12,26 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScrollController _controller = ScrollController();
+    ScrollController controller = ScrollController();
 
     return Scaffold(
       backgroundColor: primaryBackGroundColor,
       body: ListView(
-        controller: _controller,
+        controller: controller,
         children: [
-          Container(
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    HomeWidget(),
-                    AboutWidget(),
-                    SkillsWidget(),
-                  ],
-                ),
-                NavbarWidget(controller: _controller),
-              ],
-            ),
+          Stack(
+            children: [
+              Column(
+                children: [
+                  ListProject(),
+                  HomeWidget(),
+                  AboutWidget(),
+                  SkillsWidget(),
+                  EducationWidget(),
+                ],
+              ),
+              // NavbarWidget(controller: _controller),
+            ],
           ),
         ],
       ),

@@ -38,7 +38,7 @@ class NavbarWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 566,
+            // width: 566,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -77,12 +77,16 @@ class NavbarWidget extends StatelessWidget {
                   },
                 ),
                 NavbarMenuItem(
-                  title: 'Work',
+                  title: 'Educations',
                   textStyle: primaryTextStyleDmSans.copyWith(
                     fontSize: 24,
                     fontWeight: bold,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.animateTo(MediaQuery.of(context).size.height * 3,
+                        duration: Duration(seconds: 1),
+                        curve: Curves.fastOutSlowIn);
+                  },
                 ),
                 NavbarMenuItem(
                   title: 'Clients',

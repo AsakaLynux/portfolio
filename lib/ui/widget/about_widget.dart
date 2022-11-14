@@ -6,6 +6,15 @@ class AboutWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Map<String, dynamic> bio = {
+      'Nama': 'Muhammad Irfansyah',
+      'TTL': 'Depok, 04 Februari 2002',
+      'Agama': 'Islam',
+      'Alamat':
+          'Peruhaman Bukit Cengkeh II Blok F4, No11, Rt11, Rw16, Tugu, Cimanggis, Kota Depok',
+      'HP': '081316277967',
+      'Email': 'muhammad.irfansyah26647@gmail.com'
+    };
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
@@ -29,8 +38,8 @@ class AboutWidget extends StatelessWidget {
           SizedBox(
             height: 435,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
                   'ABOUT ME',
@@ -39,22 +48,49 @@ class AboutWidget extends StatelessWidget {
                     fontWeight: bold,
                   ),
                 ),
-                Text(
-                  'Mobile Developer',
-                  style: primaryTextStyleRufina.copyWith(
-                    fontSize: 45,
-                    fontWeight: regular,
-                  ),
-                ),
                 SizedBox(
-                  width: 670,
-                  child: Text(
-                    'PHP, ASP, Ruby, Python, etc. Medium skill in database/server work, medium skill in JavaScript, light skill in HTML. This is very different from a Front End Developer as there is little working with the design and heavier on programming concepts and concerns, like security and structure.',
-                    style: secondaryTextStyleDmSans.copyWith(
-                      fontSize: 25,
-                      fontWeight: regular,
-                    ),
-                    textAlign: TextAlign.justify,
+                  height: 200,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Nama: ${bio['Nama']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        'TTL: ${bio['TTL']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        'Agama: ${bio['Agama']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        'Alamat: ${bio['Alamat']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        'HP: ${bio['HP']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Text(
+                        'Email: ${bio['Email']}',
+                        style: primaryTextStyleDmSans.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
                   ),
                 )
               ],
