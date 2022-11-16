@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/shared/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListProject extends StatelessWidget {
   const ListProject({super.key});
@@ -9,27 +10,35 @@ class ListProject extends StatelessWidget {
     final List<Map> myProjects = [
       {
         'name': 'MeJo:Mental Journal',
-        'link': 'www.google.com',
+        'link': 'https://github.com/AsakaLynux/MeJo-Mental-Journal.git',
       },
       {
-        'name': 'MeJo:Mental Journal',
-        'link': 'www.google.com',
+        'name': 'POWS',
+        'link': 'https://github.com/AsakaLynux/POWS',
       },
       {
-        'name': 'lab',
-        'link': 'www.youtube.com',
+        'name': 'Anime App',
+        'link': 'https://github.com/AsakaLynux/Anime-App',
       },
       {
-        'name': 'lab',
-        'link': 'www.youtube.com',
+        'name': 'Progate',
+        'link': 'https://asakalynux.github.io/Progate/',
       },
       {
-        'name': 'lab',
-        'link': 'www.youtube.com',
+        'name': 'Travel app',
+        'link': 'https://github.com/AsakaLynux/travel',
       },
       {
-        'name': 'lab',
-        'link': 'www.youtube.com',
+        'name': 'Car Showcase',
+        'link': 'https://github.com/AsakaLynux/car_showcase',
+      },
+      {
+        'name': 'Movie List',
+        'link': 'https://github.com/AsakaLynux/Movie-List',
+      },
+      {
+        'name': 'Practice for organization',
+        'link': 'https://asakalynux.github.io/',
       }
     ];
 
@@ -50,21 +59,44 @@ class ListProject extends StatelessWidget {
         ),
         itemCount: myProjects.length,
         itemBuilder: (BuildContext ctx, index) {
-          return Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.circular(18),
-            ),
-            child: Text(
-              myProjects[index]["name"],
-              style: primaryTextStyleRufina.copyWith(
-                fontSize: 30,
+          return InkWell(
+            onTap: () async {
+              final url = Uri.parse(myProjects[index]["link"]);
+              _launchUrl(url);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(18),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    myProjects[index]["name"],
+                    style: primaryTextStyleRufina.copyWith(
+                      fontSize: 30,
+                    ),
+                  ),
+                  Text(
+                    myProjects[index]["link"],
+                    style: primaryTextStyleRufina.copyWith(
+                      fontSize: 15,
+                    ),
+                  ),
+                ],
               ),
             ),
           );
         },
       ),
     );
+  }
+}
+
+Future<void> _launchUrl(Uri url) async {
+  if (!await launchUrl(url)) {
+    throw 'Could not launch $url';
   }
 }

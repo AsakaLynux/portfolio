@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const Color primaryBackGroundColor = const Color(0xff252829);
-const Color secondaryBackGroundColor = const Color(0xff313536);
-const Color greenColor = const Color(0xff00E472);
-const Color greyColor = const Color(0xffABAEB0);
+const Color primaryBackGroundColor = Color(0xff252829);
+const Color secondaryBackGroundColor = Color(0xff313536);
+const Color greenColor = Color(0xff00E472);
+const Color greyColor = Color(0xffABAEB0);
 const Color whiteColor = Colors.white;
 
 // Text Style
